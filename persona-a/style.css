@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Arial Black', sans-serif;
+}
+
+#bg {
+  position: fixed;
+  inset: 0;
+  background: url("default.jpg") center/cover no-repeat;
+  transition: background 0.4s ease;
+  z-index: -1;
+  filter: contrast(1.1) saturate(1.2);
+}
+
+.menu {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+}
+
+.item {
+  font-size: 64px;
+  color: white;
+  margin: 20px 0;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.item::before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  width: 0%;
+  height: 70%;
+  background: crimson;
+  z-index: -1;
+  transform: translateY(-50%) skewX(-12deg);
+  transition: width 0.25s ease;
+}
+
+.item:hover::before {
+  width: 120%;
+}
+
+.item:hover {
+  transform: translateX(10px) scale(1.05);
+}
